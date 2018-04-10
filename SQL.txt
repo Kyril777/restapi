@@ -1,0 +1,46 @@
+
+// Categories table.
+CREATE TABLE IF NOT EXISTS `categories` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL,
+    `description` text NOT NULL,
+    `created` datetime NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+// Products table.
+CREATE TABLE IF NOT EXISTS `products` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(22) NOT NULL,
+    `description` text NOT NULL,
+    `price` decimal(10,0) NOT NULL,
+    `category_id` int(11) NOT NULL,
+    `created` datetime NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=65;
+
+// Insert Categories
+INSERT INTO `categories` (`id`, `name`, `description`, `created`, `modified`) VALUES
+(1, 'Beverages', 'Includes coffee/tea, juice, soda', '2018-04-01 00:35:07', '2018-04-02 17:35:07'),
+(2, 'Produce', 'Includes fruits and vegetables', '2018-04-01 00:35:07', '2018-04-02 17:35:07'),
+(3, 'Meat', 'Includes lunch meat, poultry, beef, pork', '2018-04-01 00:35:07', '2018-04-02 17:35:07'),
+(4, 'Dairy', 'Includes cheeses, eggs, milk, yogurt, butter', '2018-04-01 00:35:07', '2018-04-02 17:35:07'),
+(5, 'Canned', 'Includes vegetables, spaghetti sauce, ketchup', '2018-04-01 00:35:07', '2018-04-02 17:35:07'),
+(6, 'Frozen', 'Includes waffles, vegetables, individual meals, ice cream', '2018-04-01 00:35:07', '2018-04-02 17:35:07');
+
+// Insert Products
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `category_id`, `created`, `modified`) VALUES
+(1, 'Abuelita Drink Tablets', 'Authentic Mexican Hot Chocolate Drink Tablets', '5.00', 1, '2018-04-03 01:12:26', '2014-04-04 02:18:31');
+(2, 'New Zealand Artesian Water', 'Bottled at source from our protected, confined aquifer 680 feet below ground', '2.49', 1, '2018-04-03 01:12:26', '2014-04-04 02:18:31');
+(11, 'Romaine hearts lettuce', 'Smaller, more yellow, and sweeter, these leaves have a delicious flavor and texture that is perfect for Caesar salads', '4.00', 2, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(12, 'Fuji Apple', 'Originated as a cross between two American apple varieties — the Red Delicious and old Virginia Ralls Genet', '1.00', 2, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(21, 'Rib eye roast', 'Raised in Australia, Grass fed and all natural. Roasts can be from 2 to 8 lbs.', '8.98', 3, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(22, 'Chicken Breasts', '5-6 pieces. 2.75 to 3.75-lb. pkg., Fresh, Skinless U.S.D.A. GRADE A', '6.57', 3, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(41, 'Reduced fat milk', 'Pasteurized, homogenized reduced fat milk, vitamin A palmitate, vitamin D3.', '3.18', 4, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(42, 'American Cheese', 'processed cheese made from a blend of milk, milk fats and solids, with other fats and whey protein concentrate. ', '6.57', 4, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(51, 'Classic Spam', 'This is the taste that started it all, the original flavor from 1937.', '5.00', 5, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(52, 'Campbell\'s Pork & Beans', 'Water, Pea Beans, Pork Stock, High Fructose Corn Syrup', '1.00', 5, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(61, 'Rocky Road Ice Cream', 'Breyers Rocky Road swirls deliciously gooey marshmallow through rich chocolate frozen dairy dessert with real, chocolatey-covered almonds. This is the fastest road to fun', '2.49', 6, '2018-04-03 01:12:26', '2014-04-04 02:18:31'),
+(62, 'Frozen Waffles', 'For a quick breakfast, many folks turn to frozen options– especially waffles. They\'re a staple in your freezer, ', '7.49', 6, '2018-04-03 01:12:26', '2014-04-04 02:18:31');
